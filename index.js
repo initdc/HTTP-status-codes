@@ -64,6 +64,8 @@ const HTTP_STATUS_CODES = {
     511: "Network Authentication Required",
 }
 
+const NO_BODY = [101, 204, 205, 304]
+
 addEventListener("fetch", (event) => {
     event.respondWith(
         handleRequest(event.request).catch(
@@ -79,6 +81,13 @@ async function handleRequest(request) {
     const resObj = {}
     resObj.status = reqCode
     resObj.statusText = HTTP_STATUS_CODES[reqCode] || "Unassigned"
+
+    if (NO_BODY.indexOf(reqCode) !== -1) {
+        return new Response(null, {
+            status: reqCode,
+            headers: { "Content-Type": "application/json" },
+        })
+    }
 
     return new Response(JSON.stringify(resObj, null, 2), {
         status: reqCode,
