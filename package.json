@@ -1,0 +1,22 @@
+{
+  "name": "http-status-codes",
+  "version": "0.0.1",
+  "description": "Response with HTTP status code that you request",
+  "main": "inedx.js",
+  "scripts": {
+    "dev": "miniflare index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/initdc/HTTP-status-codes.git"
+  },
+  "author": "initdc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/initdc/HTTP-status-codes/issues"
+  },
+  "homepage": "https://github.com/initdc/HTTP-status-codes#readme",
+  "devDependencies": {
+    "miniflare": "^1.4.1"
+  }
+}
