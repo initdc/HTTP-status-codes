@@ -15,7 +15,7 @@ http.example.com / 200
 ## Usage
 
 ```sh
-# yarn dev 
+# yarn dev
 
 curl "http://localhost:8787/200"
 ```
@@ -33,6 +33,10 @@ curl "http://localhost:8787/200"
 ## Reference
 
 [Cloudflare Workers documentation](https://developers.cloudflare.com/workers/)
+
+[HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+
+[Hypertext Transfer Protocol (HTTP) Status Code Registry](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)
 
 ## Powered by
 

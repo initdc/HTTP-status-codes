@@ -12,11 +12,14 @@ const HTTP_STATUS_CODES = {
     206: "Partial Content",
     207: "Multi-Status",
     208: "Already Reported",
+    226: "IM Used",
     300: "Multiple Choices",
     301: "Moved Permanently",
     302: "Found",
     303: "See Other",
     304: "Not Modified",
+    305: "Use Proxy",
+    306: "(Unused)",
     307: "Temporary Redirect",
     308: "Permanent Redirect",
     400: "Bad Request",
@@ -38,7 +41,10 @@ const HTTP_STATUS_CODES = {
     416: "Range Not Satisfiable",
     417: "Expectation Failed",
     418: "I'm a teapot",
+    421: "Misdirected Request",
     422: "Unprocessable Entity",
+    423: "Locked",
+    424: "Failed Dependency",
     425: "Too Early",
     426: "Upgrade Required",
     428: "Precondition Required",
@@ -68,7 +74,7 @@ addEventListener("fetch", (event) => {
 
 async function handleRequest(request) {
     const { pathname } = new URL(request.url);
-    const reqCode = Number(pathname.split("/")[1])
+    const reqCode = Number(pathname.split("/")[1]) || 200
 
     const resObj = {}
     resObj.status = reqCode
