@@ -5,7 +5,7 @@
 ## Design
 
 ```js
-http.example.com / 200
+http.example.com / 200;
 
 /*
 @200:   request code
