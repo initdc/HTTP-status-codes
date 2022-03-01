@@ -78,7 +78,7 @@ const HEADERS = {
 addEventListener("fetch", (event) => {
   event.respondWith(
     handleRequest(event.request).catch(
-      (err) => new Response(err.stack, { status: 500 })
+      (e) => new Response("你没事吧?  (´･д･`)\n" + e.stack, { status: 500 })
     )
   );
 });
